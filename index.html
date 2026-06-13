@@ -4,117 +4,302 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agro Forte e Sustentável</title>
-    <script src="https://kit.fontawesome.com/36b68b79b2.js" crossorigin="anonymous"></script>
     <style>
-        </style>
+        /* Configurações Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho / Navbar */
+        header {
+            background-color: #1b4332;
+            color: #fff;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #52b788;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #52b788;
+        }
+
+        /* Seção Hero (Destaque) */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 1rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background-color: #52b788;
+            color: #1b4332;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #74c69d;
+        }
+
+        /* Seções de Conteúdo */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #1b4332;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #52b788;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Importância do Agronegócio */
+        .importancia {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+
+        /* Prós e Contras (Grid) */
+        .grid-pros-contras {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card.pros h3 { color: #2d6a4f; }
+        .card.contras h3 { color: #b7094c; }
+
+        .card ul {
+            list-style-position: inside;
+            margin-left: 5px;
+        }
+
+        .card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* O papel das Escolas */
+        .escolas {
+            background-color: #e9f5ed;
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .escolas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .escola-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid #52b788;
+        }
+
+        /* Curiosidades / Extra */
+        .curiosidades {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1b4332;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .grid-pros-contras {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 1rem;
+            }
+            nav a {
+                margin: 0 0.7rem;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
+
     <header>
-        <div class="header-conteudo">
-            <h1><i class="fas fa-tractor"></i> Agro Forte e Sustentável</h1>
-            <p>Produção que alimenta o mundo, cuidado que preserva o futuro</p>
-        </div>
+        <h1>AgroSustentável</h1>
+        <nav>
+            <a href="#importancia">Importância</a>
+            <a href="#impactos">Pontos Positivos/Negativos</a>
+            <a href="#escolas">Papel das Escolas</a>
+            <a href="#curiosidades">Curiosidades</a>
+        </nav>
     </header>
 
-    <!-- Menu de Navegação -->
-    <nav>
-        <ul>
-            <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
-            <li><a href="#praticas"><i class="fas fa-leaf"></i> Práticas Sustentáveis</a></li>
-            <li><a href="#beneficios"><i class="fas fa-heartbeat"></i> Benefícios</a></li>
-            <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
-        </ul>
-    </nav>
+    <section class="hero">
+        <h2>O Futuro Alimenta-se de Sustentabilidade</h2>
+        <p>Conectando a força do campo com o respeito ao meio ambiente e o desenvolvimento social.</p>
+        <a href="#importancia" class="btn">Saiba Mais</a>
+    </section>
 
     <div class="container">
-        <!-- Seção Sobre - Imagem: Grande lavoura produtiva -->
-        <section id="sobre">
-            <h2><i class="fas fa-earth-americas"></i> Sobre o Nosso Propósito</h2>
-            <div class="grid-layout">
-                <div class="texto-bloco">
-                    <p>O agronegócio é a força motriz que move a economia brasileira e garante alimento de qualidade para milhões de pessoas no Brasil e no mundo. Ser <strong>Agro Forte</strong> é investir em tecnologia, inovação, maquinário moderno e trabalho dedicado para elevar a produção a níveis cada vez mais altos. É gerar renda, emprego e desenvolvimento para o interior do país.</p>
-                    <p>Mas ser forte também é ser consciente: é entender que o nosso maior patrimônio é a natureza que nos cerca. Nossa missão é provar que produtividade e preservação caminham lado a lado. Unimos tradição e modernidade para desenvolver um modelo de agricultura que respeita o solo, a água, o clima e todas as formas de vida, garantindo riqueza hoje e recursos para as gerações de amanhã. Somos a prova de que é possível crescer sem esgotar.</p>
+
+        <section id="importancia" class="importancia">
+            <h2 class="section-title">A Importância do Agronegócio</h2>
+            <p>O agronegócio é um dos principais pilares da economia global. Ele vai muito além do cultivo da terra: engloba a produção de alimentos, fibras, biocombustíveis e matérias-primas que abastecem indústrias no mundo todo. Sem a força do campo, a segurança alimentar das cidades estaria em risco, tornando este setor vital para a sobrevivência humana e a estabilidade econômica das nações.</p>
+        </section>
+
+        <section id="impactos">
+            <h2 class="section-title">Impactos do Agronegócio</h2>
+            <div class="grid-pros-contras">
+                
+                <div class="card pros">
+                    <h3>🟢 Pontos Positivos</h3>
+                    <ul>
+                        <li><strong>Segurança Alimentar:</strong> Produção em larga escala para alimentar a população mundial em crescimento.</li>
+                        <li><strong>Geração de Empregos:</strong> Criação de milhões de postos de trabalho diretos e indiretos no campo e na cidade.</li>
+                        <li><strong>Avanço Tecnológico:</strong> Estímulo à inovação através de maquinários, biotecnologia e monitoramento via satélite.</li>
+                        <li><strong>Pilar Econômico:</strong> Forte contribuição para o PIB (Produto Interno Bruto) e balança comercial de exportação.</li>
+                    </ul>
                 </div>
-                <div class="imagem-bloco">
-                    <img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=650&q=80" alt="Lavoura extensa e verde representando produção forte e abundante">
+
+                <div class="card contras">
+                    <h3>🔴 Pontos Negativos</h3>
+                    <ul>
+                        <li><strong>Desmatamento:</strong> Expansão de fronteiras agrícolas sobre florestas e ecossistemas nativos.</li>
+                        <li><strong>Uso de Defensivos:</strong> Impactos na saúde e contaminação do solo/água pelo uso inadequado de agrotóxicos.</li>
+                        <li><strong>Consumo de Água:</strong> O uso intensivo de recursos hídricos para irrigação sem a gestão adequada.</li>
+                        <li><strong>Monocultura:</strong> Empobrecimento do solo e perda de biodiversidade devido ao cultivo de uma única cultura.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="escolas" class="escolas">
+            <h2 class="section-title">O Papel Transformador das Escolas</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 1.5rem;">As instituições de ensino são a base para construir uma sociedade que entende a necessidade do equilíbrio entre produção e preservação. Veja como elas podem agir:</p>
+            
+            <div class="escolas-grid">
+                <div class="escola-item">
+                    <h4>Horta Comunitária</h4>
+                    <p>Criar hortas escolares ensina os alunos sobre o ciclo dos alimentos, o valor da agricultura orgânica e o respeito pela terra.</p>
+                </div>
+                <div class="escola-item">
+                    <h4>Educação Ambiental</h4>
+                    <p>Debater consumo consciente, reciclagem, compostagem e os impactos da produção no cotidiano.</p>
+                </div>
+                <div class="escola-item">
+                    <h4>Projetos Científicos</h4>
+                    <p>Incentivar pesquisas sobre captação de água da chuva, energias renováveis e conservação da biodiversidade local.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Práticas Sustentáveis - Imagem: Agricultura com técnicas corretas -->
-        <section id="praticas">
-            <h2><i class="fas. fa-seedling"></i> Nossas Práticas Sustentáveis</h2>
-            <div class="grid-layout">
-                <div class="imagem-bloco">
-                    <img src="https://images.unsplash.com/photo-1623216654835-e20f565a39c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=650&q=80" alt="Agricultura com manejo correto, solo preparado e plantas saudáveis">
-                </div>
-                <div class="texto-bloco">
-                    <p>Utilizamos técnicas avançadas e ecologicamente corretas que aumentam a eficiência e reduzem impactos ambientais. Confira o que fazemos de melhor:</p>
-                    <p><span class="icone-pratica">🔄</span> <strong>Rotação de culturas:</strong> Alternamos diferentes espécies na mesma área para renovar os nutrientes do solo naturalmente, evita pragas e mantém a terra sempre fértil e produtiva por mais tempo.</p>
-                    <p><span class="icone-pratica">💧</span> <strong>Uso inteligente da água:</strong> Sistemas de irrigação por gotejamento e pivô central, além da captação e armazenamento de águas da chuva, para não desperdiçar nem uma gota desse recurso essencial.</p>
-                    <p><span class="icone-pratica">🐞</span> <strong>Controle biológico:</strong> Combate a pragas e doenças através de agentes naturais e produtos orgânicos, diminuindo drasticamente o uso de produtos químicos e protegendo a saúde do produtor, do consumidor e do meio ambiente.</p>
-                    <p><span class="icone-pratica">🌳</span> <strong>Respeito à mata nativa:</strong> Preservação integral das matas ciliares, nascentes e áreas de proteção permanente, fundamentais para o equilíbrio do clima, da biodiversidade e do ciclo da água.</p>
-                </div>
-            </div>
+        <section id="curiosidades" class="curiosidades">
+            <h2 class="section-title">Você Sabia?</h2>
+            <p>O conceito de <strong>"Agro 5.0"</strong> já é uma realidade. Ele foca no uso de inteligência artificial, sensores e drones para otimizar o uso da água e reduzir drasticamente a aplicação de insumos químicos, provando que a tecnologia é a maior aliada da preservação ambiental no campo.</p>
         </section>
 
-        <!-- Seção Benefícios - Imagens correspondentes a cada benefício -->
-        <section id="beneficios">
-            <h2><i class="fas fa-gem"></i> O Que Ganhamos Com Isso</h2>
-            <div class="destaques">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1558981285-6f0c85b03990?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Mão segurando terra fértil e saudável">
-                    <h3>Solo Vivo e Fértil</h3>
-                    <p>Preservamos a estrutura, os nutrientes e os microrganismos do solo, garantindo que ele continue produzindo com qualidade e alta produtividade por décadas, sem perder sua capacidade natural.</p>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1518866112852-386d41823162?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Nascente de água cristalina protegida por mata">
-                    <h3>Água em Abundância</h3>
-                    <p>Proteção rigorosa de nascentes, rios e cursos d'água. Água limpa é sinônimo de vida para a lavoura, para os animais, para a natureza e para toda a comunidade que depende desse recurso.</p>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1542838132-922c414e4146?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Cesta com alimentos frescos, frutas e legumes">
-                    <h3>Alimento de Verdade</h3>
-                    <p>Produtos mais saudáveis, nutritivos e seguros, livres de resíduos prejudiciais. Do campo para a mesa, com todo o cuidado que sua família merece e com a transparência que você confia.</p>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1473770613464-0b245f46b9c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Árvore forte e paisagem equilibrada">
-                    <h3>Equilíbrio Climático</h3>
-                    <p>Práticas que capturam carbono, mantêm o clima estável e reduzem emissões, ajudando a combater as mudanças climáticas e mantendo o ambiente equilibrado para todos os seres vivos.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Contato - Imagem: Região rural de Jaguariaíva/PR -->
-        <section id="contato">
-            <h2><i class="fas fa-paper-plane"></i> Fale Conosco</h2>
-            <div class="grid-layout">
-                <div class="texto-bloco contato-detalhes">
-                    <p>Quer conhecer mais sobre nossa forma de trabalhar, tirar dúvidas, saber sobre cursos ou propor parcerias? Ficaremos felizes em conversar com você!</p>
-                    <p>Estamos localizados em <strong>Jaguariaíva - Paraná</strong>, uma região de solo fértil, tradição no agronegócio e paisagens deslumbrantes, onde acreditamos que o agro é a base de um futuro próspero.</p>
-                    <p><i class="fas fa-envelope"></i> contato@agrofortesustentavel.com.br</p>
-                    <p><i class="fas fa-location-dot"></i> Centro, Jaguariaíva - PR, Brasil</p>
-                    <p><i class="fas fa-phone"></i> (43) 99999-0000</p>
-                </div>
-                <div class="imagem-bloco">
-                    <img src="https://images.unsplash.com/photo-1508519418567-aaa370023668?ixlib=rb-4.0.3&auto=format&fit=crop&w=650&q=80" alt="Paisagem rural representando a região de Jaguariaíva, PR, com campos e morros">
-                </div>
-            </div>
-        </section>
     </div>
 
-    <!-- Rodapé -->
     <footer>
-        <h3>Agro Forte e Sustentável</h3>
-        <p>Produzindo riqueza, preservando o futuro.</p>
-        <div class="icones-sociais">
-            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.78;">© 2026 - Todos os direitos reservados | Desenvolvido com amor ao campo</p>
+        <p>&copy; 2026 Agro Forte e Sustentável. Desenvolvido para a conscientização ambiental e social.</p>
     </footer>
+
 </body>
 </html>
