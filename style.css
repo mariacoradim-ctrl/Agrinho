@@ -1,4 +1,5 @@
-     * {
+ /* Configurações Gerais */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -107,6 +108,16 @@
             border-radius: 2px;
         }
 
+        /* Imagens da Página */
+        .page-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
         /* Importância do Agronegócio */
         .importancia {
             background-color: #fff;
@@ -121,6 +132,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .card {
@@ -145,6 +157,15 @@
 
         .card ul li {
             margin-bottom: 0.5rem;
+        }
+
+        /* Novas Gerações (Seção Nova) */
+        .geracoes-futuras {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
         }
 
         /* O papel das Escolas */
@@ -206,5 +227,8 @@
             }
             .hero h2 {
                 font-size: 2rem;
+            }
+            .page-image {
+                height: 250px;
             }
         }
