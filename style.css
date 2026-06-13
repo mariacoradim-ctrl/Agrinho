@@ -1,4 +1,42 @@
+/* Efeito de fundo agrícola */
+body {
+    background:
+        linear-gradient(rgba(244,241,232,0.95), rgba(244,241,232,0.95)),
+        url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854");
+    background-size: cover;
+    background-attachment: fixed;
+}
 
+/* Animação dos cards */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(47,93,50,0.25);
+}
+
+/* Linha decorativa nos títulos */
+.title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #6b8e23;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+/* Destaque nas seções */
+.box {
+    border-left: 5px solid #6b8e23;
+}
+
+/* Rodapé mais elegante */
+footer {
+    background: linear-gradient(135deg, #2f5d32, #4f772d);
+}
     * {
       margin: 0;
       padding: 0;
