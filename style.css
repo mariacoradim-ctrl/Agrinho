@@ -1,5 +1,4 @@
-
-        * {
+     * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -7,327 +6,205 @@
         }
 
         body {
-            background-color: #f8f5f0;
+            background-color: #f4f7f5;
             color: #333;
             line-height: 1.6;
-            background-image: url('https://images.unsplash.com/photo-1500382017477-3215de34f34c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-blend-mode: soft-light;
-            background-color: rgba(248, 245, 240, 0.91);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Cabeçalho decorado */
+        /* Cabeçalho / Navbar */
         header {
-            background: linear-gradient(135deg, #1b4332 0%, #40916c 50%, #95d5b2 100%);
-            color: white;
-            padding: 3.5rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
-            border-bottom: 4px solid #d4a373;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
+            background-color: #1b4332;
+            color: #fff;
+            padding: 1rem 2rem;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-            opacity: 0.13;
-            z-index: 0;
-        }
-
-        .header-conteudo {
-            position: relative;
-            z-index: 2;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         header h1 {
-            font-size: 3.2rem;
-            margin-bottom: 0.8rem;
-            text-shadow: 3px 3px 5px rgba(0,0,0,0.25);
-            letter-spacing: 1.2px;
-            animation: aparecer 1.2s ease-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        header p {
-            font-size: 1.35rem;
-            opacity: 0.95;
-            font-style: italic;
-            max-width: 800px;
-            margin: 0 auto;
-            animation: aparecer 1.5s ease-out;
-        }
-
-        @keyframes aparecer {
-            from { opacity: 0; transform: translateY(-25px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Navegação estilizada */
-        nav {
-            background-color: rgba(58, 38, 19, 0.95);
-            padding: 1.2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid #d4a373;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
+            font-size: 1.5rem;
+            color: #52b788;
         }
 
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.08rem;
-            transition: all 0.35s ease;
-            padding: 0.7rem 1.4rem;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
         nav a:hover {
+            color: #52b788;
+        }
+
+        /* Seção Hero (Destaque) */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 1rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
             background-color: #52b788;
             color: #1b4332;
-            transform: translateY(-4px);
-            box-shadow: 0 5px 15px rgba(82, 183, 136, 0.5);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
         }
 
-        /* Container principal */
+        .btn:hover {
+            background-color: #74c69d;
+        }
+
+        /* Seções de Conteúdo */
         .container {
-            max-width: 1280px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
         }
 
-        /* Seções com estilo */
-        section {
-            margin-bottom: 5rem;
-            background-color: rgba(255, 255, 255, 0.86);
-            padding: 3rem;
-            border-radius: 22px;
-            box-shadow: 0 10px 28px rgba(0,0,0,0.09);
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            transition: transform 0.45s ease, box-shadow 0.45s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background: linear-gradient(180deg, #2d6a4f, #74c69d, #d4a373);
-        }
-
-        section:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 14px 35px rgba(0,0,0,0.13);
-        }
-
-        section h2 {
-            color: #2d6a4f;
-            font-size: 2.3rem;
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #1b4332;
             margin-bottom: 2rem;
-            border-bottom: 3px solid #74c69d;
-            padding-bottom: 0.7rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
+            position: relative;
         }
 
-        /* Layout em grade aprimorado */
-        .grid-layout {
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #52b788;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Importância do Agronegócio */
+        .importancia {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+
+        /* Prós e Contras (Grid) */
+        .grid-pros-contras {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .texto-bloco p {
-            margin-bottom: 1.3rem;
-            font-size: 1.18rem;
-            text-align: justify;
-            line-height: 1.7;
-        }
-
-        .imagem-bloco img {
-            width: 100%;
-            height: auto;
-            border-radius: 18px;
-            box-shadow: 0 7px 20px rgba(0,0,0,0.2);
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-            border: 6px solid white;
-            object-fit: cover;
-        }
-
-        .imagem-bloco img:hover {
-            transform: scale(1.05) rotate(1deg);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-        }
-
-        /* Cards de benefícios decorados */
-        .destaques {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 2.2rem;
-            margin-top: 2.8rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
         }
 
         .card {
-            background: linear-gradient(to bottom, #ffffff, #f8f0e3);
-            padding: 2rem 1.8rem;
-            border-radius: 20px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: all 0.4s ease;
-            border: 2px solid #d8f3dc;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: linear-gradient(90deg, #2d6a4f, #52b788, #d4a373);
-        }
-
-        .card:hover {
-            transform: translateY(-9px) scale(1.04);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.14);
-        }
-
-        .card img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #74c69d;
-            margin-bottom: 1.2rem;
-            transition: transform 0.4s ease;
-        }
-
-        .card:hover img {
-            transform: rotate(6deg);
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .card h3 {
-            color: #3a2613;
-            margin: 1rem 0;
-            font-size: 1.35rem;
-        }
-
-        .icone-pratica {
-            font-size: 1.5rem;
-            color: #2d6a4f;
-            margin-right: 0.6rem;
-            font-weight: bold;
-        }
-
-        /* Seção de contato especial */
-        .contato-detalhes {
-            font-size: 1.18rem;
-        }
-
-        .contato-detalhes p {
-            margin: 0.9rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .contato-detalhes i {
-            color: #2d6a4f;
-            font-size: 1.4rem;
-            width: 28px;
-        }
-
-        /* Rodapé decorado */
-        footer {
-            background: linear-gradient(135deg, #3a2613 0%, #6f4e37 100%);
-            color: white;
-            text-align: center;
-            padding: 3.5rem 2rem;
-            margin-top: 2rem;
-            position: relative;
-            border-top: 4px solid #d4a373;
-        }
-
-        footer h3 {
-            font-size: 1.6rem;
             margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        footer p {
-            margin: 0.5rem 0;
-            opacity: 0.92;
-            font-size: 1.05rem;
+        .card.pros h3 { color: #2d6a4f; }
+        .card.contras h3 { color: #b7094c; }
+
+        .card ul {
+            list-style-position: inside;
+            margin-left: 5px;
         }
 
-        .icones-sociais {
+        .card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* O papel das Escolas */
+        .escolas {
+            background-color: #e9f5ed;
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .escolas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
             margin-top: 1.5rem;
         }
 
-        .icones-sociais a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 0.7rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-            display: inline-block;
+        .escola-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid #52b788;
         }
 
-        .icones-sociais a:hover {
-            color: #95d5b2;
-            transform: translateY(-5px) scale(1.1);
+        /* Curiosidades / Extra */
+        .curiosidades {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1b4332;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
+            .grid-pros-contras {
+                grid-template-columns: 1fr;
             }
-            nav ul {
-                gap: 1rem;
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 1rem;
             }
             nav a {
-                font-size: 0.95rem;
-                padding: 0.5rem 1rem;
+                margin: 0 0.7rem;
             }
-            section {
-                padding: 2rem 1.5rem;
+            .hero h2 {
+                font-size: 2rem;
             }
         }
-    
